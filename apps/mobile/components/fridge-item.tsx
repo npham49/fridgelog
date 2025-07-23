@@ -5,10 +5,7 @@ import { Text } from "@/components/ui/text";
 import { useEffect, useRef } from "react";
 import { Badge } from "./ui/badge";
 import ReanimatedSwipeable from "react-native-gesture-handler/ReanimatedSwipeable";
-import Reanimated, {
-  SharedValue,
-  useAnimatedStyle,
-} from "react-native-reanimated";
+import Reanimated from "react-native-reanimated";
 import {
   ContextMenu,
   ContextMenuContent,
@@ -58,11 +55,7 @@ export const FridgeItem = ({
   });
 
   // Render left actions (shown when swiping right) - Add to Shopping Cart
-  const renderLeftActions = (progress: any) => {
-    console.log("progress", progress);
-    if (progress === 1) {
-      swipeableRef.current?.close();
-    }
+  const renderLeftActions = () => {
     return (
       <View className="flex-1 bg-green-500 justify-center items-center">
         <Reanimated.View>
